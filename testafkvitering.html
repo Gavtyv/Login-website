@@ -2,38 +2,36 @@
 <html>
 
 <head>
+		<link rel = "stylesheet" type = "text/css" href = "formatkvitering.css">
+		<script type="text/javascript" src="loginscripts.js"></script>
 		
 </head>
 
-<onload = generePinkode()>
-
-<h1> Velkommen til BI0</h1>
-<div id = "pintilbruger"> </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<body onload = "generePinkode()" >
+	<h1> Velkommen i Biografen</h1>
+	<div id = "content">
+		<div id = "text">
+			<div id = "textcolor">
+				<br>
+				<h2> Pinkode er: </h2>
+				<div id="myText" ></div>
+				<br>
+				<button id="vis"  onclick = "visPinNummerButton()">Vis pinkode</button>				
+			</div>
+		</div>	
+		<div id ="list">
+			<br>
+			<ul> <!--her laver man en liste med bullet points-->
+				<font size="+2">
+				<li>Navn: Kasper Petersen</li><br>
+				<li>Film Navn: IT del 2</li><br>
+				<li>Antal personer: 2</li><br>
+				<li>Film afspilles i: sal 4</li><br>
+				<li>Sædenummer: 25, 26</li><br>
+				<li>Bestilt snack vare: 2 * 0.5 liter popcorn, 2* 0.5 liter cola</li><br>
+				</font>
+			</ul> <!-- slut på liste-->
+		</div>
+	</div>	
 </body>
 </html>

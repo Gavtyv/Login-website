@@ -1,0 +1,25 @@
+body{
+	background-color: red;
+}
+img{
+width: 100%;
+}
+#content {
+	width: 80%;
+	margin: auto;
+}
+#text{
+	background-color; yellow;
+}
+#list{
+background-image: url(billetredigeret.png);
+background-repeat: no-repeat;
+height: 380px;
+background-size: cover;
+}
+ul{
+	margin-left: 10%;
+}
+#textcolor{
+color: yellow;
+}

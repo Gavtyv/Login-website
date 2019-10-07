@@ -5,16 +5,15 @@ var GyldigtKodeord1 = "25129312";
 var pin1;
 var Gyldigtbrugernavn2 = "LP";
 var GyldigtKodeord2 = "123456";
+var pin2 = "1234";
 var Gyldigtbrugernavn3 = "Steven";
 var GyldigtKodeord3 = "654321";
+var pin3 = "4321";
+
 function formdata() 
 {
  Brugernavn1= document.getElementById("Brugernavn").value; // brugernavn textbox i html fill for gemt det der blev indtastet i variable Brugernavn1.
  Adgangskode1= document.getElementById("Adgangskode").value; //Adgangskode textbox i html fill for gemt det der blev indtastet i variable Adgangskode1.
-/*document.writeln("<h1>Confirmation Page</h1><br>");
-document.writeln("Thank you for completing this form.<br><br>");
-document.writeln("The first name you entered is " + Brugernavn1 + "<br>");
-document.writeln("The last name you entered is " + Adgangskode1);*/
 document.getElementById("udskrivning").innerHTML = "Det indtastede brugernavn og adgangskode er:" + " " + Brugernavn1 + " " + Adgangskode1;
 }
 
@@ -40,49 +39,44 @@ function generePinkode(){
     for (var i = 0, n = charset.length; i < length; ++i) {
         pin1 += charset.charAt(Math.floor(Math.random() * n));
     }
-    document.getElementById("loginstatus").innerHTML += "<br> " + pin1;
+    document.getElementById("myText").innerHTML += "<h2>" + pin1 + "</h2><br>";
 	
 }
 
-/*function input(e) {
-    document.getElementById("pin").value += e;
-tbInput.value = tbInput.value + e.value;
-}*/
-
-/*function del() {
-	//document.getElementById("pin").value  = "";
-    var tbInput = document.getElementById("pin").value; // pinkode textbox indhold gemems i variable
-    document.getElementById("pin").value = tbInput.substr(0, tbInput.length - 1 );// den tager fra starten til men tager ikke den sidste cirfre med (eks 256 = 25) og så fjerne den sidste cifre
-}*/
 
 function tjekCredentialsswitch(){
-	Brugernavn1= document.getElementById("Brugernavn").value; // brugernavn textbox i html fill for gemt det der blev indtastet i variable Brugernavn1.
-	Adgangskode1= document.getElementById("Adgangskode").value; //Adgangskode textbox i html fill for gemt det der blev indtastet i variable Adgangskode1.
+	// brugernavn textbox i html fill for gemt det der blev indtastet i variable Brugernavn1.
+	Brugernavn1= document.getElementById("Brugernavn").value; 
+	
+	//Adgangskode textbox i html fill for gemt det der blev indtastet i variable Adgangskode1.
+	Adgangskode1= document.getElementById("Adgangskode").value;
+	
 	switch(Brugernavn1){
 		case"KasperPetersen":
 			if(Adgangskode1 == GyldigtKodeord1){
-				document.getElementById("loginstatus").innerHTML = "Dette er et gyldigt brugernavn og adgangskode. Access granted" ;
-				pin1 = generePinkode("loginstatus");
-				location.href="testafkvitering.html"; //fører videre til næste side.
-			}
-			else{
-				document.getElementById("loginstatus").innerHTML = " Forkert Brugernavn eller password";	
-			}	
-			break;	
-		case"LP":
-			if(Adgangskode1 == GyldigtKodeord2){
-			document.getElementById("loginstatus").innerHTML = "Dette er et gyldigt brugernavn og adgangskode. Access granted" ;
-				//pin2 = generePinkode("loginstatus");
+				document.getElementById("loginstatus").innerHTML = 
+				"Dette er et gyldigt brugernavn og adgangskode. Access granted" ;
 				location.href="testafkvitering.html"; //fører videre til næste side.
 			}
 			else{
 				document.getElementById("loginstatus").innerHTML = " Forkert Brugernavn eller password";	
 			}	
 			break;
+			
+		case"LP":
+			if(Adgangskode1 == GyldigtKodeord2){
+				document.getElementById("loginstatus").innerHTML = "Dette er et gyldigt brugernavn og adgangskode. Access granted" ;
+				location.href="testafkvitering.html"; //fører videre til næste side.				
+			}
+			else{
+				document.getElementById("loginstatus").innerHTML = " Forkert Brugernavn eller password";	
+			}	
+			break;
+			
 		case"Steven":
 			if(Adgangskode1 == GyldigtKodeord3){
-			document.getElementById("loginstatus").innerHTML = "Dette er et gyldigt brugernavn og adgangskode. Access granted" ;
-				//pin3 = generePinkode("loginstatus");
+				document.getElementById("loginstatus").innerHTML = "Dette er et gyldigt brugernavn og adgangskode. Access granted" ;
+				visPinNummer = "3";
 				location.href="testafkvitering.html"; //fører videre til næste side.
 			}
 			else{
@@ -91,32 +85,25 @@ function tjekCredentialsswitch(){
 			break;			
 			
 		default:
-			document.getElementById("loginstatus").innerHTML = " Forkert brugernavn eller password";	
+			document.getElementById("loginstatus").innerHTML = " Forkert Brugernavn eller password";	
 		
 			
 	}
 	
 }
 
-/*function tjekpin(){
-	indtastetpin = document.getElementById("pin").value;
-	switch(indtastetpin){
-		case"1234":
-			if (indtastetpin == pin2){
-			document.getElementById("udskrivning").innerHTML = "godkendt pin, sender 1 til arduino";
-		
-		}
-		break;
-		
-		case"4321":
-			if (indtastetpin == pin3){
-			document.getElementById("udskrivning").innerHTML = "godkendt pin, sender 1 til arduino";
-		
-		}
-		break;
-		
-		default:
-			document.getElementById("udskrivning").innerHTML = " Forkert pin sender 0";
-	}
-	
-}*/
+function vispin1(){
+	pin1;
+	document.getElementById("myText").innerHTML = pin1;
+}
+
+function vispin2(){
+	pin2;
+	document.getElementById("myText").innerHTML = pin2;
+}
+
+function vispin3(){
+	pin3;
+	document.getElementById("myText").innerHTML = pin3;
+}
+
